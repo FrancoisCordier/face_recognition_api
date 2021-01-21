@@ -6,7 +6,7 @@ const { response } = require("express");
 const knex = require("knex")({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
+    host: "postgresql-polished-63857",
     user: "postgres",
     password: "200392",
     database: "face_recognition",
@@ -45,6 +45,4 @@ app.post("/imageurl", (req, res) => {
   image.handleApiCall(req, res);
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`Application is running on port ${process.env.PORT}`);
-});
+app.listen(3000);

@@ -6,8 +6,10 @@ const { response } = require("express");
 const knex = require("knex")({
   client: "pg",
   connection: {
-    connectString: process.env.DATABASE_URL,
-    ssl: true,
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
 });
 const register = require("./controllers/register");

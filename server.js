@@ -6,10 +6,8 @@ const { response } = require("express");
 const knex = require("knex")({
   client: "pg",
   connection: {
-    host: "postgresql-polished-63857",
-    user: "postgres",
-    password: "200392",
-    database: "face_recognition",
+    host: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 const register = require("./controllers/register");
